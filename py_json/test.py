@@ -1,4 +1,4 @@
-import kf_cpp
+import val3ditypy
 import json
 
 # val3dity
@@ -7,11 +7,11 @@ with open(path, 'r') as f:
     cityjson = json.load(f)
 print('type(cityjson): ', type(cityjson))
 
-take = kf_cpp.take_json(cityjson)
+take = val3ditypy.take_json(cityjson)
 print('type(take): ', type(take))
 
-j = kf_cpp.return_json(cityjson)
+j = val3ditypy.return_json(cityjson)
 print('j:', j)
 print('type(j): ', type(j))
 
-print(kf_cpp.vc(j,0.001,0.01,20.0,-1.0))
+print(val3ditypy.validate_cityjson(j,0.001,0.01,20.0,-1.0))
