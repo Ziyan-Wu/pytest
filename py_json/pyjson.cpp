@@ -15,7 +15,7 @@ json return_json(py::dict obj) {
     json j = obj;
 
 //    std::cout << "This function returns an nlohmann::json instance: "  << j << std::endl;
-    std::cout << "This function returns an nlohmann::json instance: " << std::endl;
+//    std::cout << "This function returns an nlohmann::json instance: " << std::endl;
     return j;
 }
 
