@@ -1,6 +1,7 @@
 #include <iostream>
 #include <pybind11/pybind11.h>
 #include <pybind11/numpy.h>
+#include <pybind11/stl.h>
 namespace py = pybind11;
 
 int add(int i, int j) {
@@ -56,8 +57,25 @@ void sum_array(py::array_t<double> array){
 
 //test Numpy-nD
 
+std::vector<int> test_vector(){
+    std::vector<int> mod;
+    mod.push_back(3);
+    mod.push_back(4);
+    mod.push_back(5);
+    return mod;
+}
 
+//void take_json(const json& s) {
+//    std::cout << "This function took an nlohmann::json instance as argument: " << s << std::endl;
+//}
 
+//json return_json(py::dict obj) {
+//    json j = obj; // combine them
+//
+//    std::cout << "This function returns an nlohmann::json instance: "  << j << std::endl;
+//    std::cout << "This function returns an nlohmann::json instance: " << std::endl;
+//    return j;
+//}
 
 
 
@@ -77,4 +95,9 @@ PYBIND11_MODULE(kf_cpp, m) {
     m.def("judge",&judge,"if first number greater the second return True else False");
     m.def("pass_str",&pass_str,"if first number greater the second return True else False");
     m.def("sum_array",&sum_array,"test numpy can be passed?");
+    m.def("test_vector",&test_vector,"test vector can be passed?");
+
+    //    m.def("take_json", &take_json, "pass py::object to a C++ function that takes an nlohmann::json");
+    //    //py::dictionary to json
+    //    m.def("return_json", &return_json, "return py::object from a C++ function that returns an nlohmann::json");
 }
