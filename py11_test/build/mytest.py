@@ -8,3 +8,5 @@ a2 = np.array([1,3,0,4])
 print("type(a1):\n",type(a1))
 kf_cpp.sum_array(a1)
 kf_cpp.sum_array(a2)
+
+print(kf_cpp.mod())
