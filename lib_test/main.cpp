@@ -53,7 +53,7 @@ int main(int argc, char *argv[]) {
     boundaries.push_back(b11);boundaries.push_back(b22);boundaries.push_back(b33);
     boundaries.push_back(b44);boundaries.push_back(b55);boundaries.push_back(b66);
 
-    bool re = val3dity::validate_arrays("Solid",boundaries,vertices,0.001,0.01,20.0,-1.0);
+    bool re = val3dity::validate_arrays("Solid",boundaries,vertices);
 
     // std::ifstream input("/Users/hugo/data/tu3djson/cube.json");
 //    std::ifstream input("/home/ziyanwu/data/cube.json");
