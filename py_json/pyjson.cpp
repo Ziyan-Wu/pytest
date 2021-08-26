@@ -89,6 +89,17 @@ bool validate_cityjson_jr(py::dict obj, py::dict jr,
 }
 
 
+//validate_array
+bool validate_arrays(std::string geom, std::vector<std::vector<std::vector<int>>> boundaries,
+                     std::vector<std::vector<double>> vertices,
+                    double tol_snap=0.001,
+                    double planarity_d2p_tol=0.01,
+                    double planarity_n_tol=20.0,
+                    double overlap_tol=-1.0){
+    return val3dity::validate_arrays(geom,boundaries,vertices);
+}
+
+
 
 PYBIND11_MODULE(val3ditypy, m) {
     m.doc() = "My awesome module";
@@ -121,4 +132,11 @@ PYBIND11_MODULE(val3ditypy, m) {
     m.def("validate_cityjson_jr", &validate_cityjson_jr, "A function validate cityjson file back with report",
           py::arg("cityjson"),  py::arg("jreport"), py::arg("tol_snap")=0.001,py::arg("planarity_d2p_tol")=0.01,
           py::arg("planarity_n_tol")=20.0,py::arg("overlap_tol")=-1.0);
+
+
+    //validate_array
+    m.def("validate_arrays",&validate_arrays,"A function validate boundaries and vertices",
+          py::arg("geom_type"),  py::arg("boundaries"), py::arg("vertices"),
+          py::arg("tol_snap")=0.001, py::arg("planarity_d2p_tol")=0.01,
+          py::arg("planarity_n_tol")=20.0, py::arg("overlap_tol")=-1.0);
 }
