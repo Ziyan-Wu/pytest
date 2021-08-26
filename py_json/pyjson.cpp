@@ -109,7 +109,7 @@ PYBIND11_MODULE(val3ditypy, m) {
           py::arg("geometry"),  py::arg("tol_snap")=0.001,py::arg("planarity_d2p_tol")=0.01,
           py::arg("planarity_n_tol")=20.0,py::arg("overlap_tol")=-1.0);
 
-    m.def("validate_one_geom_jr", &validate_one_geom_jr, "A function validate one geom back with report",
+    m.def("validate_one_geom_jr", &validate_one_geom_jr, "A function validate one geom return with report",
           py::arg("geometry"),  py::arg("jreport"), py::arg("tol_snap")=0.001,py::arg("planarity_d2p_tol")=0.01,
           py::arg("planarity_n_tol")=20.0,py::arg("overlap_tol")=-1.0);
 
@@ -119,7 +119,7 @@ PYBIND11_MODULE(val3ditypy, m) {
           py::arg("tu3djson"),  py::arg("tol_snap")=0.001,py::arg("planarity_d2p_tol")=0.01,
           py::arg("planarity_n_tol")=20.0,py::arg("overlap_tol")=-1.0);
 
-    m.def("validate_tu3djson_jr", &validate_tu3djson_jr, "A function validate tu3djson back with report",
+    m.def("validate_tu3djson_jr", &validate_tu3djson_jr, "A function validate tu3djson return with report",
           py::arg("geometry"),  py::arg("jreport"), py::arg("tol_snap")=0.001,py::arg("planarity_d2p_tol")=0.01,
           py::arg("planarity_n_tol")=20.0,py::arg("overlap_tol")=-1.0);
 
@@ -129,7 +129,7 @@ PYBIND11_MODULE(val3ditypy, m) {
           py::arg("cityjson"),  py::arg("tol_snap")=0.001,py::arg("planarity_d2p_tol")=0.01,
           py::arg("planarity_n_tol")=20.0,py::arg("overlap_tol")=-1.0);
 
-    m.def("validate_cityjson_jr", &validate_cityjson_jr, "A function validate cityjson file back with report",
+    m.def("validate_cityjson_jr", &validate_cityjson_jr, "A function validate cityjson file return with report",
           py::arg("cityjson"),  py::arg("jreport"), py::arg("tol_snap")=0.001,py::arg("planarity_d2p_tol")=0.01,
           py::arg("planarity_n_tol")=20.0,py::arg("overlap_tol")=-1.0);
 

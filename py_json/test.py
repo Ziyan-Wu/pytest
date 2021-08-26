@@ -8,14 +8,14 @@ import numpy as np
 print("======open from local path======")
 
 # validate_cityjson
-print("1.validate cityjson file\n")
+print("Example-1.validate cityjson file\n")
 
 path1 = "/home/ziyanwu/data/cityjson/cube.json"
 print("(use [" + path1 + "] as example:)")
 with open(path1, 'r') as f:
     cityjson = json.load(f)
 
-print(val3ditypy.validate_cityjson(cityjson, 0.001, 0.01, 20.0, -1.0))
+print(val3ditypy.validate_cityjson(cityjson))
 # with report
 print("#=== validate_cityjson report===#")
 cityjson_report = {}
@@ -23,7 +23,7 @@ print(val3ditypy.validate_cityjson_jr(cityjson, cityjson_report, 0.001, 0.01, 20
 
 
 # validate_tu3djson
-print("2.validate tu3djson file\n")
+print("Example-2.validate tu3djson file\n")
 
 path2 = "/home/ziyanwu/data/cube.json"
 print("(use [" + path2 + "] as example:)")
@@ -39,7 +39,7 @@ print(val3ditypy.validate_tu3djson_jr(tu3djson, tu3djson_report, 0.001, 0.01, 20
 
 
 # validate_one_geom
-print("3.validate one_geom\n")
+print("Example-3.validate one_geom\n")
 geometry = tu3djson["features"][0]["geometry"]
 print(val3ditypy.validate_one_geom(geometry, 0.001, 0.01, 20.0, -1.0))
 # with report
@@ -63,7 +63,7 @@ cube_dic = {"version": "1.0", "type": "CityJSON", "vertices": ls_vertices,
                                      "geometry": [{"boundaries": ls_boundaries, "type": "Solid", "lod": 1}]}}}
 
 # validate_cityjson
-print("4.validate cityjson file\n")
+print("Example-4.validate cityjson file\n")
 print(val3ditypy.validate_cityjson(cube_dic, 0.001, 0.01, 20.0, -1.0))
 
 # lsv_dic = {"vertices": ls_vertices}
@@ -84,9 +84,9 @@ print('\n')
 ##  use list create boundaries and vertices
 ##  call validate_array function from val3dity
 #=========================================================================================
-print("======created boundaries and vertices by hand, call validate_array======")
+print("======created boundaries and vertices by hand======")
+print("Example-5.validate boundaries and vertices\n")
 boundaries = [[[0,3,2,1]],[[4,5,6,7]],[[0,1,5,4]],[[1,2,6,5]],[[2,3,7,6]],[[3,0,4,7]]]
 vertices = [[0.0,0.0,0.0],[1.0,0.0,0.0],[1.0,1.0,0.0],[0.0,1.0,0.0],
             [0.0,0.0,1.0],[1.0,0.0,1.0],[1.0,1.0,1.0],[0.0,1.0,1.0]]
 print(val3ditypy.validate_arrays("Solid",boundaries,vertices))
-
