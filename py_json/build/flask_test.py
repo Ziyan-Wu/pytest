@@ -1,17 +1,7 @@
 import json
 import requests
 
-print("=============================== create_json/j ====================================================")
 
-j = {"language": "French", "hugo": [1, 2, 4]}
-# print(j)
-
-r = requests.post('http://127.0.0.1:5000/create_json', json=j)
-print(r.url)
-print(r.status_code)
-# print(r.request)  # <PreparedRequest [POST]>
-# print(r.text)  # French
-# print(r.json)  # <bound method Response.json of <Response [200]>>
 
 print("=============================== local_path ====================================================")
 # cityjson
@@ -40,7 +30,7 @@ print(o.status_code)
 
 
 # ===================================================================================
-print("============================= created file by hand ======================================================")
+print("=========================== created file by hand =============================")
 # create file
 ls_boundaries = [[[[0, 3, 2, 1]], [[4, 5, 6, 7]], [[0, 1, 5, 4]], [[1, 2, 6, 5]], [[2, 3, 7, 6]], [[3, 0, 4, 7]]]]
 ls_vertices = [[0, 0, 0], [1, 0, 0], [1, 1, 0], [0, 1, 0], [0, 0, 1], [1, 0, 1], [1, 1, 1], [0, 1, 1]]
