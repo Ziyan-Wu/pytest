@@ -1,13 +1,19 @@
-[toc]
+- [<span id="head1">Develop python extensions for val3dity</span>](#develop-python-extensions-for-val3dity)
+  - [<span id="head2"> Tools</span>](#-tools)
+  - [<span id="head3">How to use</span>](#how-to-use)
+  - [<span id="head4">The fucntions in `pybind11_json.hpp`</span>](#the-fucntions-in-pybind11_jsonhpp)
+  - [<span id="head5">Explain `test.py`</span>](#explain-testpy)
+- [<span id="head6">Develop flask server</span>](#develop-flask-server)
+  - [<span id="head7"> Tool</span>](#-tool)
+  - [<span id="head8">How to use</span>](#how-to-use-1)
+# <span id="head1">Develop python extensions for val3dity</span>
 
-# Develop python extensions for val3dity
-
-## Tools
+## <span id="head2"> Tools</span>
 use `pybind11 module` https://github.com/pybind/pybind11 
 
 use `pybind11_json.json` make conversion between nlohmann::json and pybind11 Python objects
 
-## How to use
+## <span id="head3">How to use</span>
 `mkdir build && cd build`
 
 `cmake .. -DLIBRARY=true` compile val3dity static library
@@ -15,7 +21,7 @@ use `pybind11_json.json` make conversion between nlohmann::json and pybind11 Pyt
 `make`
 
 
-## The fucntions in `pybind11_json.hpp`
+## <span id="head4">The fucntions in `pybind11_json.hpp`</span>
 
 All functions have default values:
 `tol_snap=0.001, planarity_d2p_tol=0.01, planarity_n_tol=20.0, overlap_tol=-1.0`
@@ -33,7 +39,7 @@ if needed, can be changed as the way like `tol_snap=0.002`
 7. `val3ditypy.validate_arrays(geom_name, boundaries, vertices)`A function validate boundaries and vertices directly.
 
 
-## Explain `test.py`
+## <span id="head5">Explain `test.py`</span>
 `test.py` need to be moved to build file and run in terminal with `python3 test.py`
 
 * The python package name is `val3ditypy`, use like `import val3ditypy`
@@ -41,13 +47,13 @@ if needed, can be changed as the way like `tol_snap=0.002`
 * You can also create boundaries and vertices list(example 5) and validate them with `val3ditypy.validate_arrays()`.
 * Example 1-2-3 also generate and store a validation report in json format, call with `val3ditypy.validate_cityjson_jr()`.
 
-# Develop flask server
+# <span id="head6">Develop flask server</span>
 
-## Tool
+## <span id="head7"> Tool</span>
 use `flask` python package
 
 
-## How to use
+## <span id="head8">How to use</span>
 inside `build` file, run with terminal 1 and terminal 2
 1. `python3 val3api.py`
 2. `python3 flask_test.py`
