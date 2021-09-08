@@ -58,5 +58,5 @@ inside `build` file, run with terminal 1 and terminal 2
 1. `python3 val3api.py`
 2. `python3 flask_test.py`
 
-The data in `flask_test.py` will be sent to flask server with `POST` method, then do the validation.
+The data in `flask_test.py` will be sent to flask server in `val3api.py` with `POST` method, then do the validation.
 And the result will show in terminal 1.
